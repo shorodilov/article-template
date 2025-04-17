@@ -1,70 +1,107 @@
 {
   "title": "Pandoc metadata",
-  "description": "provides the schema for the pandoc's metadata blocks",
+  "description": "The schema for the pandoc's metadata blocks",
   "$comment": "seealso: https://pandoc.org/MANUAL.html#metadata-variables",
   "$id": "metadata.schema",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "type": "object",
   "properties": {
     "title": {
-      "type": "string"
+      "description": "Title of the document",
+      "type": "string",
+      "examples": ["Understanding Quantum Computing"]
     },
     "subtitle": {
-      "type": "string"
+      "description": "Subtitle of the document",
+      "type": "string",
+      "examples": ["A Primer for Computer Scientists"]
     },
     "author": {
-      "description": "the article author(s)",
+      "description": "The article author(s)",
       "anyOf": [
         {
-          "$ref": "#/$defs/author"
+          "type": "string",
+          "minLength": 2
+        },
+        {
+          "$ref": "#/$defs/author-details"
         },
         {
           "type": "array",
           "items": {
-            "$ref": "#/$defs/author"
+            "anyOf": [
+              {
+                "type": "string",
+                "minLength": 2
+              },
+              {
+                "$ref": "#/$defs/author-details"
+              }
+            ]
           },
-          "minItems": 1
+          "minItems": 1,
+          "examples": [
+            ["John Doe", "Jane Smith"],
+            [
+              {"name": "John Doe", "email": "john@example.com", "affiliation": "University of Science"},
+              {"name": "Jane Smith", "email": "jane@example.com", "affiliation": "Institute of Technology", "corresponding": true}
+            ]
+          ]
         }
+      ],
+      "examples": [
+        "John Doe",
+        {"name": "John Doe", "email": "john@example.com", "affiliation": "University of Science"}
       ]
     },
     "date": {
-      "description": "article publication date",
+      "description": "Article publication date",
       "type": "string",
-      "format": "date"
+      "format": "date",
+      "examples": ["2025-04-18"]
     },
     "abstract": {
-      "description": "the short summary of an article",
-      "type": "string"
+      "description": "The short summary of an article",
+      "type": "string",
+      "examples": ["This paper explores recent advances in quantum computing algorithms, with particular focus on their applications in cryptography and database search optimization."]
     },
     "abstract-title": {
-      "description": "the abstract title line",
-      "type": "string"
+      "description": "The abstract title line",
+      "type": "string",
+      "examples": ["Abstract", "Summary"]
     },
     "keywords": {
-      "description": "the list of keywords for an article",
+      "description": "The list of keywords for an article",
       "type": "array",
       "items": {
         "type": "string"
-      }
+      },
+      "examples": [
+        ["quantum computing", "algorithms", "cryptography", "quantum supremacy"]
+      ]
     },
     "subject": {
-      "description": "the subject of an article",
-      "type": "string"
+      "description": "The subject of an article",
+      "type": "string",
+      "examples": ["Computer Science", "Quantum Physics"]
     },
     "description": {
-      "description": "the description of an article",
-      "type": "string"
+      "description": "The description of an article",
+      "type": "string",
+      "examples": ["An introductory overview of quantum computing principles and applications for computer scientists and technology professionals."]
     },
     "category": {
-      "type": "string"
+      "description": "Category classification for the article",
+      "type": "string",
+      "examples": ["Research Article", "Review", "Case Study"]
     },
     "lang": {
-      "description": "identifies the main language of the document using IETF language tags",
+      "description": "Identifies the main language of the document using IETF language tags",
       "$ref": "#/$defs/lang",
       "type": "string"
     },
     "dir": {
-      "description": "the base script direction: ltr (left-to-right) or rtl (right-to-left)",
+      "description": "The base script direction: ltr (left-to-right) or rtl (right-to-left)",
       "type": "string",
       "enum": [
         "rtl",
@@ -73,56 +110,93 @@
       "default": "ltr"
     },
     "mainfont": {
-      "description": "main paper font family",
-      "type": "string"
+      "description": "Main paper font family",
+      "type": "string",
+      "examples": ["Times New Roman", "Palatino", "Computer Modern"]
     },
     "monofont": {
-      "description": "monospace font family",
-      "type": "string"
+      "description": "Monospace font family",
+      "type": "string",
+      "examples": ["Courier New", "Monaco", "Consolas"]
     },
     "fontsize": {
-      "type": "string"
+      "description": "Base font size for the document",
+      "type": "string",
+      "examples": ["10pt", "11pt", "12pt"]
     },
     "documentclass": {
-      "type": "string"
+      "description": "LaTeX document class",
+      "type": "string",
+      "examples": ["article", "report", "book", "memoir"]
     },
     "geometry": {
+      "description": "Options for the geometry package in LaTeX",
       "type": "array",
       "items": {
         "type": "string"
-      }
+      },
+      "examples": [
+        ["margin=1in"],
+        ["a4paper", "margin=1in", "twoside"]
+      ]
     },
     "papersize": {
-      "type": "string"
+      "description": "Paper size for the document",
+      "type": "string",
+      "examples": ["a4", "letter", "legal"]
     },
     "lof": {
-      "type": "string"
+      "description": "List of figures",
+      "type": "string",
+      "examples": ["true"]
     },
     "lot": {
-      "type": "string"
+      "description": "List of tables",
+      "type": "string",
+      "examples": ["true"]
     },
     "thanks": {
-      "type": "string"
+      "description": "Acknowledgments for the document",
+      "type": "string",
+      "examples": ["This research was supported by Grant #12345 from the National Science Foundation."]
     },
     "toc": {
-      "type": "boolean"
+      "description": "Whether to include a table of contents",
+      "type": "boolean",
+      "examples": [true]
     },
     "toc-depth": {
+      "description": "Depth of headings to include in the table of contents",
       "type": "integer",
       "minimum": 1,
-      "maximum": 6
+      "maximum": 6,
+      "examples": [3]
+    },
+    "csl": {
+      "description": "Citation Style Language file to use for citations and bibliography",
+      "type": "string",
+      "$comment": "seealso: https://github.com/citation-style-language/styles",
+      "examples": ["ieee.csl", "apa.csl", "chicago-author-date.csl"]
     },
     "link-citations": {
-      "type": "boolean"
+      "description": "Whether to hyperlink citations to the corresponding bibliography entries",
+      "type": "boolean",
+      "examples": [true]
     },
     "link-bibliography": {
-      "type": "boolean"
+      "description": "Whether to hyperlink bibliography entries to their corresponding citations",
+      "type": "boolean",
+      "examples": [true]
     },
     "reference-section-title": {
-      "type": "string"
+      "description": "Title for the references section",
+      "type": "string",
+      "examples": ["References", "Bibliography", "Works Cited"]
     },
     "nocite": {
-      "type": "string"
+      "description": "Citations to include in the bibliography even if not cited in the document",
+      "type": "string",
+      "examples": ["@item1, @item2, @item3", "@*"]
     }
   },
   "required": [
@@ -131,45 +205,56 @@
   ],
   "additionalProperties": true,
   "$defs": {
-    "author": {
-      "anyOf": [
-        {
-          "type": "string",
-          "minLength": 3
+    "author-details": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "description": "Author's full name",
+          "type": "string"
         },
-        {
-          "type": "object",
-          "properties": {
-            "name": {
-              "type": "string"
-            },
-            "orcid": {
-              "type": "string"
-            },
-            "roles": {
-              "type": "array",
-              "items": {
-                "enum": [
-                  "Conceptualization",
-                  "Data curation",
-                  "Formal analysis",
-                  "Funding acquisition",
-                  "Investigation",
-                  "Methodology",
-                  "Project administration",
-                  "Resources",
-                  "Software",
-                  "Supervision",
-                  "Validation",
-                  "Visualization",
-                  "Writing – original draft",
-                  "Writing – review & editing"
-                ]
-              }
-            }
+        "orcid": {
+          "description": "ORCID identifier in the format 0000-0000-0000-0000",
+          "type": "string",
+          "pattern": "^\\d{4}-\\d{4}-\\d{4}-\\d{3}[0-9X]$"
+        },
+        "email": {
+          "description": "Author's contact email",
+          "type": "string",
+          "format": "email"
+        },
+        "affiliation": {
+          "description": "Author's institutional affiliation",
+          "type": "string"
+        },
+        "corresponding": {
+          "description": "Indicates if this author is the corresponding author",
+          "type": "boolean",
+          "default": false
+        },
+        "roles": {
+          "description": "Author's contribution roles following CRediT taxonomy",
+          "type": "array",
+          "items": {
+            "enum": [
+              "Conceptualization",
+              "Data curation",
+              "Formal analysis",
+              "Funding acquisition",
+              "Investigation",
+              "Methodology",
+              "Project administration",
+              "Resources",
+              "Software",
+              "Supervision",
+              "Validation",
+              "Visualization",
+              "Writing – original draft",
+              "Writing – review & editing"
+            ]
           }
         }
-      ]
+      },
+      "required": ["name"]
     },
     "lang": {
       "enum": [
