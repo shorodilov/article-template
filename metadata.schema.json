@@ -3,7 +3,7 @@
   "description": "The schema for the pandoc's metadata blocks",
   "$comment": "seealso: https://pandoc.org/MANUAL.html#metadata-variables",
   "$id": "metadata.schema",
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$schema": "https://json-schema.org/draft-07/schema",
   "type": "object",
   "properties": {
     "title": {
