@@ -1,0 +1,3 @@
+# This file serves as a master file for article build and distribution.
+# The format and structure should be defined according to your preferred 
+# document processing system (RST, Markdown, LaTeX, etc.).
