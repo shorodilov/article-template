@@ -48,7 +48,7 @@ toc-depth: 3  # Depth of headings in table of contents
 # lot: "true"  # Include list of tables
 
 # Citation and References
-# csl: "ieee.csl"  # Citation style
+# csl: "csl/ieee.csl"  # Citation style
 reference-section-title: "References"
 link-citations: true  # Hyperlink citations to bibliography entries
 link-bibliography: true  # Hyperlink bibliography entries to citations
