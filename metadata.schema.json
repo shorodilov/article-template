@@ -1,0 +1,181 @@
+{
+  "title": "Pandoc metadata",
+  "description": "provides the schema for the pandoc's metadata blocks",
+  "$comment": "seealso: https://pandoc.org/MANUAL.html#metadata-variables",
+  "$id": "metadata.schema",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "string"
+    },
+    "author": {
+      "description": "the article author(s)",
+      "anyOf": [
+        {
+          "$ref": "#/$defs/author"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/author"
+          },
+          "minItems": 1
+        }
+      ]
+    },
+    "date": {
+      "description": "article publication date",
+      "type": "string",
+      "format": "date"
+    },
+    "abstract": {
+      "description": "the short summary of an article",
+      "type": "string"
+    },
+    "abstract-title": {
+      "description": "the abstract title line",
+      "type": "string"
+    },
+    "keywords": {
+      "description": "the list of keywords for an article",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "subject": {
+      "description": "the subject of an article",
+      "type": "string"
+    },
+    "description": {
+      "description": "the description of an article",
+      "type": "string"
+    },
+    "category": {
+      "type": "string"
+    },
+    "lang": {
+      "description": "identifies the main language of the document using IETF language tags",
+      "$ref": "#/$defs/lang",
+      "type": "string"
+    },
+    "dir": {
+      "description": "the base script direction: ltr (left-to-right) or rtl (right-to-left)",
+      "type": "string",
+      "enum": [
+        "rtl",
+        "ltr"
+      ],
+      "default": "ltr"
+    },
+    "mainfont": {
+      "description": "main paper font family",
+      "type": "string"
+    },
+    "monofont": {
+      "description": "monospace font family",
+      "type": "string"
+    },
+    "fontsize": {
+      "type": "string"
+    },
+    "documentclass": {
+      "type": "string"
+    },
+    "geometry": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "papersize": {
+      "type": "string"
+    },
+    "lof": {
+      "type": "string"
+    },
+    "lot": {
+      "type": "string"
+    },
+    "thanks": {
+      "type": "string"
+    },
+    "toc": {
+      "type": "boolean"
+    },
+    "toc-depth": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 6
+    },
+    "link-citations": {
+      "type": "boolean"
+    },
+    "link-bibliography": {
+      "type": "boolean"
+    },
+    "reference-section-title": {
+      "type": "string"
+    },
+    "nocite": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "title",
+    "author"
+  ],
+  "additionalProperties": true,
+  "$defs": {
+    "author": {
+      "anyOf": [
+        {
+          "type": "string",
+          "minLength": 3
+        },
+        {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "orcid": {
+              "type": "string"
+            },
+            "roles": {
+              "type": "array",
+              "items": {
+                "enum": [
+                  "Conceptualization",
+                  "Data curation",
+                  "Formal analysis",
+                  "Funding acquisition",
+                  "Investigation",
+                  "Methodology",
+                  "Project administration",
+                  "Resources",
+                  "Software",
+                  "Supervision",
+                  "Validation",
+                  "Visualization",
+                  "Writing – original draft",
+                  "Writing – review & editing"
+                ]
+              }
+            }
+          }
+        }
+      ]
+    },
+    "lang": {
+      "enum": [
+        "en",
+        "uk"
+      ]
+    }
+  }
+}
