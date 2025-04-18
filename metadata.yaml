@@ -1,56 +1,55 @@
-# Article Metadata Template
+# metadata.yaml
+#
+# Article Metadata
 # This file follows the schema defined in metadata.schema.json
 
 # Basic Information
-title: "Article Title"
-subtitle: "Article Subtitle"
-author:
-  - name: "Author Name"
-    email: "author@example.com"
-    affiliation: "Institution Name"
-    corresponding: true
-#    roles:
-#     - "Writing – original draft"
-#     - "Conceptualization"
-date: "2025-04-18"  # ISO format: YYYY-MM-DD
+title: Title
+subtitle: Subtitle
+author: Author Name
+# The more solid approach is to pass the date as variables during
+# the creation of a publication version:
+# `--variable date=$(date +'&Y-%m-%d')`
+#date: "2025-04-18"  # ISO format: YYYY-MM-DD
 
 # Content Description
-abstract: |
-  This is the abstract of the article. It should provide a concise summary
-  of the article's content, main arguments, methodology, and findings.
-  The abstract should be between 150-250 words.
-abstract-title: "Abstract"
+#abstract: |
+#  This is the abstract of the article. It should provide a concise summary
+#  of the article's content, main arguments, methodology, and findings.
+#  The abstract should be between 150-250 words.
+#abstract-title: "Abstract"
 keywords:
   - "keyword1"
   - "keyword2"
   - "keyword3"
-subject: "Subject Area"
-category: "Research Article"  # Research Article, Review, Case Study, etc.
+subject: Subject
+category: Category  # Research Article, Review, Case Study, etc.
 
 # Document Settings
-lang: "en"  # Language code: en, uk
-#dir: "ltr"  # Text direction: ltr, rtl
+lang: uk  # Language code: en, uk
+#dir: ltr # Text direction: ltr, rtl
 
 # Formatting (especially relevant for PDF output)
-#mainfont: "Times New Roman"
-#monofont: "Courier New"
-#fontsize: "12pt"
-#documentclass: "article"
-#geometry:
-# - "margin=1in"
-# - "a4paper"
-#papersize: "a4"
+mainfont: "Times New Roman"
+monofont: "Courier New"
+fontsize: "12pt"
+documentclass: "article"
+geometry:
+ - "margin=1in"
+ - "a4paper"
+papersize: "a4"
 
 # Document Structure
 toc: true  # Include table of contents
 toc-depth: 3  # Depth of headings in table of contents
-#lof: "true"  # Include list of figures
+#lof: "false"  # Include list of figures
 #lot: "true"  # Include list of tables
+lof: true
 
 # Citation and References
-#bibliography: references/bibliography.bib
-#csl: "csl/ieee.csl"  # Citation style
-#reference-section-title: "References"
+bibliography: references/bibliography.bib
+csl: csl/ieee.csl  # Citation style
+#reference-section-title: References
 link-citations: true  # Hyperlink citations to bibliography entries
 link-bibliography: true  # Hyperlink bibliography entries to citations
 # nocite: "@*"  # Include all bibliography entries even if not cited
