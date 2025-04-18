@@ -197,6 +197,11 @@
       "description": "Citations to include in the bibliography even if not cited in the document",
       "type": "string",
       "examples": ["@item1, @item2, @item3", "@*"]
+    },
+    "bibliography": {
+      "description": "The path to the bibliography file",
+      "type": "string",
+      "examples": ["references/bibliography.bib"]
     }
   },
   "required": [
