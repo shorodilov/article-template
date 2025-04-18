@@ -7,23 +7,14 @@
 title: Title
 subtitle: Subtitle
 author: Author Name
-# The more solid approach is to pass the date as variables during
-# the creation of a publication version:
-# `--variable date=$(date +'&Y-%m-%d')`
-#date: "2025-04-18"  # ISO format: YYYY-MM-DD
 
 # Content Description
-#abstract: |
-#  This is the abstract of the article. It should provide a concise summary
-#  of the article's content, main arguments, methodology, and findings.
-#  The abstract should be between 150-250 words.
-#abstract-title: "Abstract"
 keywords:
   - "keyword1"
   - "keyword2"
   - "keyword3"
 subject: Subject
-category: Category  # Research Article, Review, Case Study, etc.
+category: Category  # Research Article, Review, Case Study etc.
 
 # Document Settings
 lang: uk  # Language code: en, uk
@@ -35,16 +26,15 @@ monofont: "Courier New"
 fontsize: "12pt"
 documentclass: "article"
 geometry:
- - "margin=1in"
- - "a4paper"
+  - "margin=1in"
+  - "a4paper"
 papersize: "a4"
 
 # Document Structure
 toc: true  # Include table of contents
 toc-depth: 3  # Depth of headings in table of contents
-#lof: "false"  # Include list of figures
-#lot: "true"  # Include list of tables
-lof: true
+#lof: true  # Include the list of figures
+#lot: true  # Include the list of tables
 
 # Citation and References
 bibliography: references/bibliography.bib

@@ -3,7 +3,7 @@
   "description": "The schema for the pandoc's metadata blocks",
   "$comment": "seealso: https://pandoc.org/MANUAL.html#metadata-variables",
   "$id": "metadata.schema",
-  "$schema": "https://json-schema.org/draft-07/schema",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "type": "object",
   "properties": {
     "title": {
@@ -48,22 +48,21 @@
       "format": "date",
       "examples": [
         "2025-04-18"
-      ]
+      ],
+      "deprecated": true,
+      "$comment": "Provide date as a variable during document build."
     },
     "abstract": {
       "description": "The short summary of an article",
       "type": "string",
-      "examples": [
-        "This paper explores recent advances in quantum computing algorithms, with particular focus on their applications in cryptography and database search optimization."
-      ]
+      "deprecated": true,
+      "$comment": "Provide in frontmatter section in the master document."
     },
     "abstract-title": {
       "description": "The abstract title line",
       "type": "string",
-      "examples": [
-        "Abstract",
-        "Summary"
-      ]
+      "deprecated": true,
+      "$comment": "Provide via frontmatter section in the master document."
     },
     "keywords": {
       "description": "The list of keywords for an article",
@@ -271,6 +270,7 @@
       "minLength": 2
     },
     "lang": {
+      "$comment": "Currently limited to English and Ukrainian; add more language codes as needed",
       "enum": [
         "en",
         "uk"
