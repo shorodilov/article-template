@@ -69,29 +69,6 @@ Possible version values:
 - `review` - Ready for editorial review
 - `final` - Approved for publication
 
-## Writing Guidelines
-
-### File Naming
-
-- Use descriptive, kebab-case filenames (e.g., `literature-review.md`)
-- Avoid spaces and special characters in filenames
-- Keep filenames concise but meaningful
-
-### Content Structure
-
-- Apply proper heading hierarchy (main title, major sections, subsections etc.)
-- Include metadata for title, author, date, and version
-- Use relative links for references to other content and assets
-- Organize content logically with clear section transitions
-
-### Content Standards
-
-- Follow the established style guide for tone and formatting
-- Include proper citations for all referenced sources
-- Maintain consistent terminology throughout the article
-- Consider accessibility in content structure (proper headings, alt text for
-  images, etc.)
-
 ## Content Organization
 
 ### Main Article
@@ -111,29 +88,15 @@ This approach is useful for:
 
 ### Research Materials
 
-The `research/` directory houses supporting materials:
+The article may include a `research/` directory to house supporting materials
+such as:
 - Preliminary notes
 - Outlines and drafts
 - Research findings
 - Interview transcripts
 - Background materials
 
-## Version Management
-
-This repository uses Git for version control and frontmatter metadata for
-content status. Instead of maintaining separate draft directories, use
-frontmatter to indicate content status:
-
-```yaml
----
-version: draft
----
-```
-
-Possible version values:
-- `draft` - Work in progress
-- `review` - Ready for editorial review
-- `final` - Approved for publication
+This is optional and depends on your workflow and organizational preferences.
 
 ## Writing Guidelines
 
@@ -155,5 +118,5 @@ Possible version values:
 - Follow the established style guide for tone and formatting
 - Include proper citations for all referenced sources
 - Maintain consistent terminology throughout the article
-- Consider accessibility in content structure (proper headings, alt text for
-  images, etc.)
+- Consider accessibility in the content structure (proper headings,
+  alt text for images etc.)
