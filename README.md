@@ -10,7 +10,3 @@ articles intended for online publication or print in periodicals.
 ## Usage
 
 ...
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
