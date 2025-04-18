@@ -1,3 +1,4 @@
-# This file serves as a master file for article build and distribution.
-# The format and structure should be defined according to your preferred 
-# document processing system (RST, Markdown, LaTeX, etc.).
+:abstract: |
+  This is the abstract of the article. It should provide a concise summary
+  of the article's content, main arguments, methodology, and findings.
+  The abstract should be between 150-250 words.
