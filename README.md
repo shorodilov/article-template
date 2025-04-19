@@ -27,14 +27,11 @@ using Pandoc to generate the final document from source files.
    git clone https://github.com/username/article-template.git my-article
    cd my-article
    ```
-
 2. Initialize the Citation Style Language submodule:
    ```bash
    git submodule update --init --recursive
    ```
-
 3. Update the metadata in `metadata.yaml` with your article information.
-
 4. Begin writing your content in `src/index.txt` or create a modular structure.
 
 ### Directory Structure
@@ -49,14 +46,14 @@ using Pandoc to generate the final document from source files.
 The template uses Pandoc to generate final documents. Simple build commands:
 
 ```bash
-# Build PDF (coming soon)
-# make pdf
+# Build PDF
+make pdf
 
-# Build HTML (coming soon)
-# make html
+# Build HTML
+make html
 
-# Build DOCX (coming soon)
-# make docx
+# Build DOCX
+make docx
 ```
 
 ### Content Organization
