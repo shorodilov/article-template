@@ -80,3 +80,8 @@ $RECYCLE.BIN/
 /.idea/
 /.project
 /.settings/
+
+# Log files
+/logs/
+/log/
+*.log

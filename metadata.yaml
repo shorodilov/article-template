@@ -21,8 +21,8 @@ lang: uk  # Language code: en, uk
 #dir: ltr # Text direction: ltr, rtl
 
 # Formatting (especially relevant for PDF output)
-mainfont: "Times New Roman"
-monofont: "Courier New"
+mainfont: "Open Sans"
+#monofont: ""
 fontsize: "12pt"
 documentclass: "article"
 geometry:
