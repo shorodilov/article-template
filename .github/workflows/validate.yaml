@@ -15,5 +15,5 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 18
-      - run: npm install -g djv-cli
+      - run: npm install -g ajv-cli
       - run: ajv validate -s metadata.schema.json -d metadata.yaml
