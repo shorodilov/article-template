@@ -45,7 +45,6 @@
     "date": {
       "description": "Article publication date",
       "type": "string",
-      "format": "date",
       "examples": [
         "2025-04-18"
       ],
