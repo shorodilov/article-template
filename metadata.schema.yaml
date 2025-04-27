@@ -92,9 +92,9 @@ properties:
   # ----------------
   linestretch:
     description: |
-      For html output, sets the css line height property on the html element,
+      For HTML output, sets the CSS line height property on the HTML element,
       which is preferred to be unitless.
-      For pdf output adjusts line spacing using the `setspace` package.
+      For PDF output adjusts line spacing using the `setspace` package.
     type: number
     examples:
       - 1.25
@@ -123,7 +123,7 @@ properties:
       on the body element.
       For PDF output, sets margins if geometry is not used (otherwise geometry
       overrides these).
-  # Fonts:
+#  # Fonts:
   fontenc:
     # noinspection SpellCheckingInspection
     description: |
@@ -131,7 +131,7 @@ properties:
       package (with `pdflatex`).
   fontsize:
     description: |
-      for html output, sets the base CSS font-size.
+      for HTML output, sets the base CSS font-size.
       For PDF output, font size for body text.
     examples:
       - fontsize: 20px
@@ -147,7 +147,7 @@ properties:
       repeat for multiple options.
   mainfont:
     description: |
-      For HTML output, sets the CSS font-family property on the html element.
+      For HTML output, sets the CSS font-family property on the HTML element.
       For PDF output, font families for use with xelatex or lualatex.
   mainfontoptions:
     description: |
@@ -222,36 +222,30 @@ properties:
   microtypeoptions:
     description: |
       Options to pass to the microtype package
-  # Links:
+#  # Links:
   colorlinks:
     description: |
-      Add color to link text; automatically enabled if any of `linkcolor`,
+      Add color to a link text; automatically enabled if any of `linkcolor`,
       `filecolor`, `citecolor`, `urlcolor`, or `toccolor` are set.
   boxlinks:
     description: |
-      Add visible box around links (has no effect if colorlinks is set)
+      Add visible box around links (has no effect if `colorlinks` is set)
   linkcolor:
     description: |
       For HTML output, sets the CSS color property on all links.
       For PDF output, color for internal links.
   filecolor:
-    description: |
-      Color for internal external links.
+    description: Color for internal external links.
   citecolor:
-    description: |
-      Color for citation links.
+    description: Color for citation links.
   urlcolor:
-    description: |
-      Color for linked URLs.
+    description: Color for linked URLs.
   toccolor:
-    description: |
-      Color for links in table of contents.
+    description: Color for links in table of contents.
   links-as-notes:
-    description: |
-      Causes links to be printed as footnotes.
+    description: Causes links to be printed as footnotes.
   urlstyle:
-    description: |
-      Style for URLs (defaults to "same").
+    description: Style for URLs (defaults to "same").
     examples:
       - tt
       - rm
@@ -287,17 +281,17 @@ properties:
       Enables inclusion of most of the CSS in the styles.html partial.
   fontcolor:
     description: |
-      Sets the CSS color property on the html element.
+      Sets the CSS color property on the HTML element.
   monobackgroundcolor:
     description: |
       Sets the CSS background-color property on code elements and
       adds extra padding.
   maxwidth:
     description: |
-      Sets the CSS max-width property (default is 36em).
+      Sets the CSS max-width property (default is "36em").
   backgroundcolor:
     description: |
-      Sets the CSS background-color property on the html element.
+      Sets the CSS background-color property on the HTML element.
   # Variables for LaTeX
   # -------------------
   # Layout:
@@ -321,7 +315,7 @@ properties:
       ...
     description: |
       Make `\paragraph` and `\subparagraph` (fourth- and fifth-level headings,
-      or fifth- and sixth-level with book classes) free-standing rather than
+      or fifth- and sixth-level with book classes) freestanding rather than
       run-in; requires further formatting to distinguish from
       `\subsubsection` (third- or fourth-level headings).
   classoption:
@@ -385,9 +379,9 @@ properties:
       Options to pass to the babel package; repeat for multiple options.
   # Front matter:
   lof:
-    description: Include list of figures.
+    description: Include a list of figures.
   lot:
-    description: Include list of tables.
+    description: Include a list of tables.
   thanks:
     description: Contents of acknowledgments footnote after document title.
   toc:
@@ -411,11 +405,8 @@ properties:
       Include items in the bibliography without actually citing them in
       the body text.
     examples:
-      - nocite: |
-          @item1,@item2
-      - nocite: |
-          @group*
-      - nocite: @*
+      - nocite: "@*"
+      - nocite: "@item1,@item2"
   link-citations:
     description: |
       If true, citations will be hyperlinked to the corresponding bibliography
