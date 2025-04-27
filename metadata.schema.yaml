@@ -91,6 +91,175 @@ properties:
     enum:
       - ltr
       - rtl
+  # Shared variables
+  # ----------------
+  linestretch:
+    description: |
+      for HTML output, sets the CSS line-height property on the html element,
+      which is preferred to be unitless.
+      for PDF output adjusts line spacing using the `setspace` package.
+    type: number
+    examples:
+      - 1.25
+      - 1.5
+  margin-left:
+    description: |
+      for HTML output, sets the corresponding CSS padding properties
+      on the body element.
+      for PDF output, sets margins if geometry is not used (otherwise geometry
+      overrides these).
+  margin-right:
+    description: |
+      for HTML output, sets the corresponding CSS padding properties
+      on the body element.
+      for PDF output, sets margins if geometry is not used (otherwise geometry
+      overrides these).
+  margin-top:
+    description: |
+      for HTML output, sets the corresponding CSS padding properties
+      on the body element.
+      for PDF output, sets margins if geometry is not used (otherwise geometry
+      overrides these).
+  margin-bottom:
+    description: |
+      for HTML output, sets the corresponding CSS padding properties
+      on the body element.
+      for PDF output, sets margins if geometry is not used (otherwise geometry
+      overrides these).
+  # Fonts:
+  fontenc:
+    # noinspection SpellCheckingInspection
+    description: |
+      for PDF output, allows font encoding to be specified through `fonten`
+      package (with `pdflatex`).
+  fontsize:
+    description: |
+      for html output, sets the base CSS font-size.
+      for PDF output, font size for body text.
+    examples:
+      - fontsize: 20px
+      - fontsize: 12pt
+  fontfamily:
+    $comment: |
+      seealso:: https://tug.org/FontCatalogue/
+    description: |
+      for PDF output, font package for use with pdflatex.
+  fontfamilyoptions:
+    description: |
+      for PDF output, options for package used as fontfamily;
+      repeat for multiple options.
+  mainfont:
+    description: |
+      for HTML output, sets the CSS font-family property on the html element.
+      for PDF output, font families for use with xelatex or lualatex.
+  mainfontoptions:
+    description: |
+      option to use with. Allow for any choices available through fontspec;
+      repeat for multiple options.
+  mainfontfallback:
+    description: |
+      fonts to try if a glyph isn’t found.
+    examples:
+      - mainfontfallback:
+          - "FreeSans:"
+          - "NotoColorEmoji:mode=harf"
+  sansfont:
+    description: |
+      for PDF output, font families for use with xelatex or lualatex.
+  sansfontoptions:
+    description: |
+      option to use with. Allow for any choices available through fontspec;
+      repeat for multiple options.
+  sansfontfallback:
+    description: |
+      fonts to try if a glyph isn’t found.
+      see `mainfontfallback` for examples.
+  monofont:
+    description: |
+      for HTML output, sets the CSS font-family property on code elements.
+      for PDF output, font families for use with xelatex or lualatex.
+  monofontoptions:
+    description: |
+      option to use with. Allow for any choices available through fontspec;
+      repeat for multiple options.
+  monofontfallback:
+    description: |
+      fonts to try if a glyph isn’t found.
+      see `mainfontfallback` for examples.
+  mathfont:
+    description: |
+      for PDF output, font families for use with xelatex or lualatex.
+  mathfontoptions:
+    description: |
+      option to use with. Allow for any choices available through fontspec;
+      repeat for multiple options.
+  # noinspection SpellCheckingInspection
+  CJKmainfont:
+    description: |
+      for PDF output, font families for use with xelatex or lualatex.
+  # noinspection SpellCheckingInspection
+  CJKsansfont:
+    description: |
+      for PDF output, font families for use with xelatex or lualatex.
+  # noinspection SpellCheckingInspection
+  CJKmonofont:
+    description: |
+      for PDF output, font families for use with xelatex or lualatex.
+  # noinspection SpellCheckingInspection
+  CJKoptions:
+    description: |
+      option to use with. Allow for any choices available through fontspec;
+      repeat for multiple options.
+  # noinspection SpellCheckingInspection
+  luatexjapresetoptions:
+    description: |
+      option to use with. Allow for any choices available through fontspec;
+      repeat for multiple options.
+  babelfonts:
+    description: a map of Babel language names.
+    # noinspection SpellCheckingInspection
+    examples:
+      - babelfonts:
+          chinese-hant: "Noto Serif CJK TC"
+          ukrainian: "Noto Serif"
+  microtypeoptions:
+    description: |
+      options to pass to the microtype package
+  # Links:
+  colorlinks:
+    description: |
+      add color to link text; automatically enabled if any of `linkcolor`,
+      `filecolor`, `citecolor`, `urlcolor`, or `toccolor` are set.
+  boxlinks:
+    description: |
+      add visible box around links (has no effect if colorlinks is set)
+  linkcolor:
+    description: |
+      for HTML output, sets the CSS color property on all links.
+      for PDF output, color for internal links.
+  filecolor:
+    description: |
+      color for internal external links.
+  citecolor:
+    description: |
+      color for citation links.
+  urlcolor:
+    description: |
+      color for linked URLs.
+  toccolor:
+    description: |
+      color for links in table of contents.
+  links-as-notes:
+    description: |
+      causes links to be printed as footnotes.
+  urlstyle:
+    description: |
+      style for URLs (defaults to "same").
+    examples:
+      - tt
+      - rm
+      - sf
+      - same
   # Variables for HTML
   # ------------------
   # To override or extend some CSS for just one document,
@@ -119,51 +288,127 @@ properties:
       You can disable it with e.g. `pandoc -M document-css=false`.
     description: |
       enables inclusion of most of the CSS in the styles.html partial.
-  mainfont:
-    description: |
-      for html output, sets the CSS font-family property on the html element.
-  fontsize:
-    description: |
-      for html output, sets the base CSS font-size
-    examples:
-      - fontsize: 20px
-      - fontsize: 12pt
   fontcolor:
     description: |
       sets the CSS color property on the html element.
-  linkcolor:
-    description: |
-      sets the CSS color property on all links.
-  monofont:
-    description: |
-      sets the CSS font-family property on code elements.
   monobackgroundcolor:
     description: |
       sets the CSS background-color property on code elements and
       adds extra padding.
-  linestretch:
-    description: |
-      sets the CSS line-height property on the html element,
-      which is preferred to be unitless.
   maxwidth:
     description: |
       sets the CSS max-width property (default is 36em).
   backgroundcolor:
-    description: |    
+    description: |
       sets the CSS background-color property on the html element.
-  margin-left:
+  # Variables for LaTeX
+  # -------------------
+  # Layout:
+  block-headings:
+    # noinspection SpellCheckingInspection
+    $comment: |
+      Instead of using this option, KOMA-Script can adjust headings more
+      extensively:
+      ---
+      documentclass: scrartcl
+      header-includes: |
+        \RedeclareSectionCommand[
+          beforeskip=-10pt plus -2pt minus -1pt,
+          afterskip=1sp plus -1sp minus 1sp,
+          font=\normalfont\itshape]{paragraph}
+        \RedeclareSectionCommand[
+          beforeskip=-10pt plus -2pt minus -1pt,
+          afterskip=1sp plus -1sp minus 1sp,
+          font=\normalfont\scshape,
+          indent=0pt]{subparagraph}
+      ...
     description: |
-      for HTML output, sets the corresponding CSS padding properties
-      on the body element.
-  margin-right:
+      make `\paragraph` and `\subparagraph` (fourth- and fifth-level headings,
+      or fifth- and sixth-level with book classes) free-standing rather than
+      run-in; requires further formatting to distinguish from
+      `\subsubsection` (third- or fourth-level headings).
+  classoption:
     description: |
-      for HTML output, sets the corresponding CSS padding properties
-      on the body element.
-  margin-top:
+      option for document class, e.g. oneside; repeat for multiple options.
+    # noinspection SpellCheckingInspection
+    examples:
+      - classoption: landscape
+      - classoption:
+          - landscape
+      - classoption:
+          - twocolumn
+          - landscape
+  documentclass:
+    # noinspection SpellCheckingInspection
     description: |
-      for HTML output, sets the corresponding CSS padding properties
-      on the body element.
-  margin-bottom:
+      document class: usually one of the standard classes, "article", "book",
+      and "report"; the KOMA-Script equivalents, `scrartcl`, `scrbook`, and
+      `scrreprt`, which default to smaller margins; or `memoir`
+  geometry:
     description: |
-      for HTML output, sets the corresponding CSS padding properties
-      on the body element.
+      option for geometry package, e.g. margin=1in;
+      repeat for multiple options.
+    # noinspection SpellCheckingInspection
+    examples:
+      - geomentry:
+          - margin=1in
+      - geometry:
+          - margine=2cm
+      - geometry:
+          - top=30mm
+          - left=20mm
+          - heightrounded
+  hyperrefoptions:
+    description: |
+      option for hyperref package, e.g. linktoc=all;
+      repeat for multiple options.
+    # noinspection SpellCheckingInspection
+    examples:
+      - hyperrefoptions:
+          - linktoc=all
+          - pdfwindowui
+          - pdfpagemode=FullScreen
+  indent:
+    description: |
+      if true, pandoc will use document class settings for indentation.
+  papersize:
+    description: |
+      paper size.
+    examples:
+      - letter
+      - a4
+  secnumdepth:
+    description: |
+      numbering depth for sections.
+  #beamerarticle:  # IGNORE: no slides output support in this schema.
+  csquotes:
+    description: |
+      load csquotes package and use `\enquote` or `\enquote*` for quoted text.
+  babeloptions:
+    description: |
+      options to pass to the babel package; repeat for multiple options.
+  # Front matter:
+  lof:
+    description: include list of figures.
+  lot:
+    description: include list of tables.
+  thanks:
+    description: contents of acknowledgments footnote after document title.
+  toc:
+    $comment: |
+      can also be set using --toc/--table-of-contents.
+    description: |
+      include table of contents.
+  toc-depth:
+    description: level of section to include in table of contents.
+  # BibLaTeX Bibliographies:
+  biblatexoptions:
+    description: list of options for biblatex.
+  biblio-style:
+    description: bibliography style, when used with --natbib and --biblatex.
+  biblio-title:
+    description: bibliography title, when used with --natbib and --biblatex.
+  bibliography:
+    description: bibliography to use for resolving references.
+  natbiboptions:
+    description: list of options for natbib.
