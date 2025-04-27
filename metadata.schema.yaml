@@ -8,6 +8,9 @@ $comment: |
 $id: metadata.schema
 type: object
 additionalProperties: true
+required:
+  - title
+  - author
 properties:
   # Metadata variables
   # ------------------
