@@ -8,3 +8,69 @@ $comment: |
 $id: metadata.schema
 type: object
 additionalProperties: true
+properties:
+  # Metadata variables
+  # ------------------
+  # Allow identification of basic aspects of the document.
+  # Included in PDF metadata through LaTeX and ConTeXt.
+  # Note that if you just want to set PDF or HTML metadata,
+  # without including a title block in the document itself,
+  # you can set the title-meta, author-meta, and date-meta variables.
+  # (By default, these are set automatically, based on title, author, and date.)
+  # The page title in HTML is set by `pagetitle`,
+  # which is equal to the `title` by default.
+  # Additionally, any root-level string metadata, not included in ODT,
+  # docx or pptx metadata is added as a custom property.
+
+  # noinspection YAMLSchemaValidation
+  title:
+    description: |
+      document title.
+  author:
+    description: |
+      document author(s); repeat for multiple.
+    examples:
+      - author:
+          - Aristotle
+          - Peter Abelard
+      - author:
+          - Pythagoras
+      - author: Tom
+  date:
+    description: |
+      document creation or last update date.
+  subtitle:
+    description: |
+      document subtitle, included in HTML, EPUB, LaTeX, ConTeXt, and
+      docx documents.
+  abstract:
+    description: |
+      document summary, included in HTML, LaTeX, ConTeXt, AsciiDoc, and
+      docx documents.
+  abstract-title:
+    description: |
+      title of abstract, currently used only in HTML, EPUB, and docx.
+      This will be set automatically to a localized value, depending on lang,
+      but can be manually overridden.
+  keywords:
+    description: |
+      list of keywords to be included in HTML, PDF, ODT, pptx, docx and
+      AsciiDoc metadata; repeat for multiple.
+    examples:
+      - keywords:
+          - keyword1
+          - keyword2
+      - keywords:
+          - single_keyword
+      - keywords: single_keyword
+  subject:
+    description: |
+      document subject, included in ODT, PDF, docx, EPUB, and pptx metadata.
+  # noinspection YAMLSchemaValidation
+  description:
+    description: |
+      document description, included in ODT, docx and pptx metadata.
+      Some applications show this as Comments metadata.
+  category:
+    description: |
+      document category, included in docx and pptx metadata
