@@ -412,3 +412,28 @@ properties:
     description: bibliography to use for resolving references.
   natbiboptions:
     description: list of options for natbib.
+  nocite:
+    description: |
+      include items in the bibliography without actually citing them in
+      the body text.
+    examples:
+      - nocite: |
+          @item1,@item2
+      - nocite: |
+          @group*
+      - nocite: @*
+  link-citations:
+    description: |
+      If true, citations will be hyperlinked to the corresponding bibliography
+      entries.
+    default: false
+  link-bibliography:
+    # noinspection SpellCheckingInspection
+    description: |
+      If true, DOIs, PMCIDs, PMID, and URLs in bibliographies will be rendered
+      as hyperlinks.
+    default: true
+  csl:
+    description: |
+      Set the csl field in the document’s metadata to FILE,
+      overriding any value set in the metadata.
