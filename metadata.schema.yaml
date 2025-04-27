@@ -33,9 +33,22 @@ properties:
     description: Document author(s); repeat for multiple.
     anyOf:
       - type: string
+        minLength: 2
       - type: array
         items:
           type: string
+          minLength: 2
+      - type: array
+        items:
+          type: object
+          properties:
+            name:
+              type: string
+              minLength: 2
+            affiliation:
+              type: string
+          required:
+            - name
     examples:
       - author:
           - Aristotle
