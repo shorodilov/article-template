@@ -24,11 +24,9 @@ properties:
 
   # noinspection YAMLSchemaValidation
   title:
-    description: |
-      document title.
+    description: Document title.
   author:
-    description: |
-      document author(s); repeat for multiple.
+    description: Document author(s); repeat for multiple.
     examples:
       - author:
           - Aristotle
@@ -37,24 +35,23 @@ properties:
           - Pythagoras
       - author: Tom
   date:
-    description: |
-      document creation or last update date.
+    description: Document creation or last update date.
   subtitle:
     description: |
-      document subtitle, included in HTML, EPUB, LaTeX, ConTeXt, and
+      Document subtitle, included in html, epub, la te x, con te xt, and
       docx documents.
   abstract:
     description: |
-      document summary, included in HTML, LaTeX, ConTeXt, AsciiDoc, and
+      Document summary, included in html, la te x, con te xt, ascii doc, and
       docx documents.
   abstract-title:
     description: |
-      title of abstract, currently used only in HTML, EPUB, and docx.
+      Title of abstract, currently used only in html, epub, and docx.
       This will be set automatically to a localized value, depending on lang,
       but can be manually overridden.
   keywords:
     description: |
-      list of keywords to be included in HTML, PDF, ODT, pptx, docx and
+      List of keywords to be included in html, pdf, odt, pptx, docx and
       AsciiDoc metadata; repeat for multiple.
     examples:
       - keywords:
@@ -65,27 +62,27 @@ properties:
       - keywords: single_keyword
   subject:
     description: |
-      document subject, included in ODT, PDF, docx, EPUB, and pptx metadata.
+      Document subject, included in odt, pdf, docx, epub, and pptx metadata.
   # noinspection YAMLSchemaValidation
   description:
     description: |
-      document description, included in ODT, docx and pptx metadata.
+      Document description, included in odt, docx and pptx metadata.
       Some applications show this as Comments metadata.
   category:
     description: |
-      document category, included in docx and pptx metadata
+      Document category, included in docx and pptx metadata
   # Language variables
   # ------------------
   lang:
     description: |
-      identifies the main language of the document using IETF language tags
+      Identifies the main language of the document using ietf language tags
       (following the BCP 47 standard), such as "en" or "en-GB".
   dir:
     $comment: |
       When using LaTeX for bidirectional documents, only the xelatex engine
       is fully supported (use `--pdf-engine=xelatex`).
     description: |
-      the base script direction, either rtl (right-to-left) or
+      The base script direction, either rtl (right to left) or
       ltr (left-to-right).
     type: string
     enum:
@@ -95,47 +92,47 @@ properties:
   # ----------------
   linestretch:
     description: |
-      for HTML output, sets the CSS line-height property on the html element,
+      For html output, sets the css line height property on the html element,
       which is preferred to be unitless.
-      for PDF output adjusts line spacing using the `setspace` package.
+      For pdf output adjusts line spacing using the `setspace` package.
     type: number
     examples:
       - 1.25
       - 1.5
   margin-left:
     description: |
-      for HTML output, sets the corresponding CSS padding properties
+      For HTML output, sets the corresponding CSS padding properties
       on the body element.
-      for PDF output, sets margins if geometry is not used (otherwise geometry
+      For PDF output, sets margins if geometry is not used (otherwise geometry
       overrides these).
   margin-right:
     description: |
-      for HTML output, sets the corresponding CSS padding properties
+      For HTML output, sets the corresponding CSS padding properties
       on the body element.
-      for PDF output, sets margins if geometry is not used (otherwise geometry
+      For PDF output, sets margins if geometry is not used (otherwise geometry
       overrides these).
   margin-top:
     description: |
-      for HTML output, sets the corresponding CSS padding properties
+      For HTML output, sets the corresponding CSS padding properties
       on the body element.
-      for PDF output, sets margins if geometry is not used (otherwise geometry
+      For PDF output, sets margins if geometry is not used (otherwise geometry
       overrides these).
   margin-bottom:
     description: |
-      for HTML output, sets the corresponding CSS padding properties
+      For HTML output, sets the corresponding CSS padding properties
       on the body element.
-      for PDF output, sets margins if geometry is not used (otherwise geometry
+      For PDF output, sets margins if geometry is not used (otherwise geometry
       overrides these).
   # Fonts:
   fontenc:
     # noinspection SpellCheckingInspection
     description: |
-      for PDF output, allows font encoding to be specified through `fonten`
+      For PDF output, allows font encoding to be specified through `fonten`
       package (with `pdflatex`).
   fontsize:
     description: |
       for html output, sets the base CSS font-size.
-      for PDF output, font size for body text.
+      For PDF output, font size for body text.
     examples:
       - fontsize: 20px
       - fontsize: 12pt
@@ -143,18 +140,18 @@ properties:
     $comment: |
       seealso:: https://tug.org/FontCatalogue/
     description: |
-      for PDF output, font package for use with pdflatex.
+      For PDF output, font package for use with pdflatex.
   fontfamilyoptions:
     description: |
-      for PDF output, options for package used as fontfamily;
+      For PDF output, options for package used as fontfamily;
       repeat for multiple options.
   mainfont:
     description: |
-      for HTML output, sets the CSS font-family property on the html element.
-      for PDF output, font families for use with xelatex or lualatex.
+      For HTML output, sets the CSS font-family property on the html element.
+      For PDF output, font families for use with xelatex or lualatex.
   mainfontoptions:
     description: |
-      option to use with. Allow for any choices available through fontspec;
+      Option to use with. Allow for any choices available through fontspec;
       repeat for multiple options.
   mainfontfallback:
     description: |
@@ -165,10 +162,10 @@ properties:
           - "NotoColorEmoji:mode=harf"
   sansfont:
     description: |
-      for PDF output, font families for use with xelatex or lualatex.
+      For PDF output, font families for use with xelatex or lualatex.
   sansfontoptions:
     description: |
-      option to use with. Allow for any choices available through fontspec;
+      Option to use with. Allow for any choices available through fontspec;
       repeat for multiple options.
   sansfontfallback:
     description: |
@@ -176,11 +173,11 @@ properties:
       see `mainfontfallback` for examples.
   monofont:
     description: |
-      for HTML output, sets the CSS font-family property on code elements.
-      for PDF output, font families for use with xelatex or lualatex.
+      For HTML output, sets the CSS font-family property on code elements.
+      For PDF output, font families for use with xelatex or lualatex.
   monofontoptions:
     description: |
-      option to use with. Allow for any choices available through fontspec;
+      Option to use with. Allow for any choices available through fontspec;
       repeat for multiple options.
   monofontfallback:
     description: |
@@ -188,32 +185,32 @@ properties:
       see `mainfontfallback` for examples.
   mathfont:
     description: |
-      for PDF output, font families for use with xelatex or lualatex.
+      For PDF output, font families for use with xelatex or lualatex.
   mathfontoptions:
     description: |
-      option to use with. Allow for any choices available through fontspec;
+      Option to use with. Allow for any choices available through fontspec;
       repeat for multiple options.
   # noinspection SpellCheckingInspection
   CJKmainfont:
     description: |
-      for PDF output, font families for use with xelatex or lualatex.
+      For PDF output, font families for use with xelatex or lualatex.
   # noinspection SpellCheckingInspection
   CJKsansfont:
     description: |
-      for PDF output, font families for use with xelatex or lualatex.
+      For PDF output, font families for use with xelatex or lualatex.
   # noinspection SpellCheckingInspection
   CJKmonofont:
     description: |
-      for PDF output, font families for use with xelatex or lualatex.
+      For PDF output, font families for use with xelatex or lualatex.
   # noinspection SpellCheckingInspection
   CJKoptions:
     description: |
-      option to use with. Allow for any choices available through fontspec;
+      Option to use with. allow for any choices available through fontspec;
       repeat for multiple options.
   # noinspection SpellCheckingInspection
   luatexjapresetoptions:
     description: |
-      option to use with. Allow for any choices available through fontspec;
+      Option to use with. allow for any choices available through fontspec;
       repeat for multiple options.
   babelfonts:
     description: a map of Babel language names.
@@ -224,37 +221,37 @@ properties:
           ukrainian: "Noto Serif"
   microtypeoptions:
     description: |
-      options to pass to the microtype package
+      Options to pass to the microtype package
   # Links:
   colorlinks:
     description: |
-      add color to link text; automatically enabled if any of `linkcolor`,
+      Add color to link text; automatically enabled if any of `linkcolor`,
       `filecolor`, `citecolor`, `urlcolor`, or `toccolor` are set.
   boxlinks:
     description: |
-      add visible box around links (has no effect if colorlinks is set)
+      Add visible box around links (has no effect if colorlinks is set)
   linkcolor:
     description: |
-      for HTML output, sets the CSS color property on all links.
-      for PDF output, color for internal links.
+      For HTML output, sets the CSS color property on all links.
+      For PDF output, color for internal links.
   filecolor:
     description: |
-      color for internal external links.
+      Color for internal external links.
   citecolor:
     description: |
-      color for citation links.
+      Color for citation links.
   urlcolor:
     description: |
-      color for linked URLs.
+      Color for linked URLs.
   toccolor:
     description: |
-      color for links in table of contents.
+      Color for links in table of contents.
   links-as-notes:
     description: |
-      causes links to be printed as footnotes.
+      Causes links to be printed as footnotes.
   urlstyle:
     description: |
-      style for URLs (defaults to "same").
+      Style for URLs (defaults to "same").
     examples:
       - tt
       - rm
@@ -287,20 +284,20 @@ properties:
       Unless you use `--css`, this variable is set to true by default.
       You can disable it with e.g. `pandoc -M document-css=false`.
     description: |
-      enables inclusion of most of the CSS in the styles.html partial.
+      Enables inclusion of most of the CSS in the styles.html partial.
   fontcolor:
     description: |
-      sets the CSS color property on the html element.
+      Sets the CSS color property on the html element.
   monobackgroundcolor:
     description: |
-      sets the CSS background-color property on code elements and
+      Sets the CSS background-color property on code elements and
       adds extra padding.
   maxwidth:
     description: |
-      sets the CSS max-width property (default is 36em).
+      Sets the CSS max-width property (default is 36em).
   backgroundcolor:
     description: |
-      sets the CSS background-color property on the html element.
+      Sets the CSS background-color property on the html element.
   # Variables for LaTeX
   # -------------------
   # Layout:
@@ -323,13 +320,13 @@ properties:
           indent=0pt]{subparagraph}
       ...
     description: |
-      make `\paragraph` and `\subparagraph` (fourth- and fifth-level headings,
+      Make `\paragraph` and `\subparagraph` (fourth- and fifth-level headings,
       or fifth- and sixth-level with book classes) free-standing rather than
       run-in; requires further formatting to distinguish from
       `\subsubsection` (third- or fourth-level headings).
   classoption:
     description: |
-      option for document class, e.g. oneside; repeat for multiple options.
+      Option for document class; repeat for multiple options.
     # noinspection SpellCheckingInspection
     examples:
       - classoption: landscape
@@ -341,13 +338,12 @@ properties:
   documentclass:
     # noinspection SpellCheckingInspection
     description: |
-      document class: usually one of the standard classes, "article", "book",
+      Document class: usually one of the standard classes, "article", "book",
       and "report"; the KOMA-Script equivalents, `scrartcl`, `scrbook`, and
       `scrreprt`, which default to smaller margins; or `memoir`
   geometry:
     description: |
-      option for geometry package, e.g. margin=1in;
-      repeat for multiple options.
+      Option for geometry package; repeat for multiple options.
     # noinspection SpellCheckingInspection
     examples:
       - geomentry:
@@ -360,7 +356,7 @@ properties:
           - heightrounded
   hyperrefoptions:
     description: |
-      option for hyperref package, e.g. linktoc=all;
+      Option for hyperref package, e.g. linktoc=all;
       repeat for multiple options.
     # noinspection SpellCheckingInspection
     examples:
@@ -370,51 +366,49 @@ properties:
           - pdfpagemode=FullScreen
   indent:
     description: |
-      if true, pandoc will use document class settings for indentation.
+      If true, pandoc will use document class settings for indentation.
   papersize:
     description: |
-      paper size.
+      Paper size.
     examples:
       - letter
       - a4
   secnumdepth:
     description: |
-      numbering depth for sections.
+      Numbering depth for sections.
   #beamerarticle:  # IGNORE: no slides output support in this schema.
   csquotes:
     description: |
-      load csquotes package and use `\enquote` or `\enquote*` for quoted text.
+      Load csquotes package and use `\enquote` or `\enquote*` for quoted text.
   babeloptions:
     description: |
-      options to pass to the babel package; repeat for multiple options.
+      Options to pass to the babel package; repeat for multiple options.
   # Front matter:
   lof:
-    description: include list of figures.
+    description: Include list of figures.
   lot:
-    description: include list of tables.
+    description: Include list of tables.
   thanks:
-    description: contents of acknowledgments footnote after document title.
+    description: Contents of acknowledgments footnote after document title.
   toc:
-    $comment: |
-      can also be set using --toc/--table-of-contents.
-    description: |
-      include table of contents.
+    $comment: can also be set using --toc/--table-of-contents.
+    description: Include table of contents.
   toc-depth:
-    description: level of section to include in table of contents.
+    description: Level of section to include in table of contents.
   # BibLaTeX Bibliographies:
   biblatexoptions:
-    description: list of options for biblatex.
+    description: List of options for biblatex.
   biblio-style:
-    description: bibliography style, when used with --natbib and --biblatex.
+    description: Bibliography style, when used with --natbib and --biblatex.
   biblio-title:
-    description: bibliography title, when used with --natbib and --biblatex.
+    description: Bibliography title, when used with --natbib and --biblatex.
   bibliography:
-    description: bibliography to use for resolving references.
+    description: Bibliography to use for resolving references.
   natbiboptions:
-    description: list of options for natbib.
+    description: List of options for natbib.
   nocite:
     description: |
-      include items in the bibliography without actually citing them in
+      Include items in the bibliography without actually citing them in
       the body text.
     examples:
       - nocite: |
