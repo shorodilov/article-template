@@ -1,0 +1,10 @@
+# metadata.schema.yaml
+
+title: Pandoc metadata
+description: The schema for the Pandoc's metadata blocks
+$comment: |
+  seealso:: https://pandoc.org/MANUAL.html#variables
+  seealso:: https://pandoc.org/MANUAL.html#metadata-variables
+$id: metadata.schema
+type: object
+additionalProperties: true
