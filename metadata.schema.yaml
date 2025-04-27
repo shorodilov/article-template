@@ -550,3 +550,11 @@ properties:
       Set the csl field in the document’s metadata to FILE,
       overriding any value set in the metadata.
     type: string
+  # Custom properties
+  # -----------------
+  repository:
+    description: Link to the remote repository, if applicable.
+    type: string
+  version:
+    description: Document version tag.
+    type: string
