@@ -91,3 +91,79 @@ properties:
     enum:
       - ltr
       - rtl
+  # Variables for HTML
+  # ------------------
+  # To override or extend some CSS for just one document,
+  # include, for example:
+  #
+  # ---
+  # header-includes: |
+  #   <style>
+  #   blockquote {
+  #     font-style: italic;
+  #   }
+  #   tr.even {
+  #     background-color: #f0f0f0;
+  #   }
+  #   td, th {
+  #     padding: 0.5em 2em 0.5em 0.5em;
+  #   }
+  #   tbody {
+  #     border-bottom: none;
+  #   }
+  #   </style>
+  # ---
+  document-css:
+    $comment: |
+      Unless you use `--css`, this variable is set to true by default.
+      You can disable it with e.g. `pandoc -M document-css=false`.
+    description: |
+      enables inclusion of most of the CSS in the styles.html partial.
+  mainfont:
+    description: |
+      for html output, sets the CSS font-family property on the html element.
+  fontsize:
+    description: |
+      for html output, sets the base CSS font-size
+    examples:
+      - fontsize: 20px
+      - fontsize: 12pt
+  fontcolor:
+    description: |
+      sets the CSS color property on the html element.
+  linkcolor:
+    description: |
+      sets the CSS color property on all links.
+  monofont:
+    description: |
+      sets the CSS font-family property on code elements.
+  monobackgroundcolor:
+    description: |
+      sets the CSS background-color property on code elements and
+      adds extra padding.
+  linestretch:
+    description: |
+      sets the CSS line-height property on the html element,
+      which is preferred to be unitless.
+  maxwidth:
+    description: |
+      sets the CSS max-width property (default is 36em).
+  backgroundcolor:
+    description: |    
+      sets the CSS background-color property on the html element.
+  margin-left:
+    description: |
+      for HTML output, sets the corresponding CSS padding properties
+      on the body element.
+  margin-right:
+    description: |
+      for HTML output, sets the corresponding CSS padding properties
+      on the body element.
+  margin-top:
+    description: |
+      for HTML output, sets the corresponding CSS padding properties
+      on the body element.
+  margin-bottom:
+    description: |
+      for HTML output, sets the corresponding CSS padding properties
+      on the body element.
